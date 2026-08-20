@@ -20,7 +20,7 @@
 // #define KB_LAYOUT_QWERTY_DK         // Denmark
 // #define KB_LAYOUT_QWERTY_EE         // Estonia
 // #define KB_LAYOUT_QWERTY_ES         // Spain
-// #define KB_LAYOUT_QWERTY_INTL       // US (International)
+#define KB_LAYOUT_QWERTY_INTL       // US (International)
 // #define KB_LAYOUT_QWERTY_IT         // Italy
 // #define KB_LAYOUT_QWERTY_LAFAYETTE  // France
 // #define KB_LAYOUT_QWERTY_LATAM      // Latin America
@@ -84,7 +84,7 @@
 // Useless on QWERTY/English keymaps or non-Windows hosts, recommended otherwise.
 // XXX This assumes NumLock is ON. It will not work otherwise.
 
-// #define ENABLE_CP1252_ALT_CODES
+#define ENABLE_CP1252_ALT_CODES
 
 // [Experimental]
 // Uncomment the following line for an improved dead key support.
@@ -139,7 +139,7 @@
 //  + Escape under the left thumb (direct access)
 // Highly recommended for Vim users, obviously. :-)
 
-// #define VIM_NAVIGATION
+#define VIM_NAVIGATION
 
 // [Experimental]
 // Uncomment the following line to enable the Callum variant of the previous
