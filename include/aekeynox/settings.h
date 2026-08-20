@@ -18,7 +18,7 @@
 // #define KB_LAYOUT_ERGLACE
 // #define KB_LAYOUT_QWERTY_BR
 // #define KB_LAYOUT_QWERTY_ES
-// #define KB_LAYOUT_QWERTY_INTL
+#define KB_LAYOUT_QWERTY_INTL
 // #define KB_LAYOUT_QWERTY_LAFAYETTE
 // #define KB_LAYOUT_QWERTY_LATAM
 // #define KB_LAYOUT_QWERTY_PT
@@ -56,7 +56,7 @@
 // #define KB_EMULATION_COLEMAK          // host: QWERTY
 // #define KB_EMULATION_COLEMAK_DH       // host: QWERTY
 // #define KB_EMULATION_DVORAK           // host: QWERTY
-// #define KB_EMULATION_ERGOL            // host: QWERTY-intl or AZERTY
+#define KB_EMULATION_ERGOL            // host: QWERTY-intl or AZERTY
 // #define KB_EMULATION_QWERTY_LAFAYETTE // host: QWERTY-intl or AZERTY
 
 // [Experimental]
@@ -81,7 +81,7 @@
 
 // #define HT_NONE
 // #define HT_THUMB_TAPS
-// #define HT_HOME_ROW_MODS  // (default behavior)
+#define HT_HOME_ROW_MODS  // (default behavior)
 // #define HT_TWO_THUMB_KEYS
 
 // Timing is key! Keep the default value if unsure.
