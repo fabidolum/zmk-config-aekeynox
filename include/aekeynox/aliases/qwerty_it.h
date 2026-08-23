@@ -6,25 +6,6 @@
 #endif
 
 /**
- * Dead Keys
- */
-
-#ifdef LINUX
-  #define DK_ACU &kp RA(COMMA) // acute
-  #define DK_GRV &kp RA(BSLH)  // grave
-  #define DK_CIR &kp RA(PLUS)  // circumflex
-  #define DK_CDL &kp RA(COLON) // cedilla
-  #define DK_DIA &kp RA(GT)    // diaeresis
-#else
-  // QWERTY-it has no dead keys on Windows
-  #define DK_ACU &none
-  #define DK_GRV &none
-  #define DK_CIR &none
-  #define DK_CDL &none
-  #define DK_DIA &none
-#endif
-
-/**
  * Action Combos
  */
 
@@ -37,6 +18,28 @@
 #define X_CTL_W &kp LC(W)
 #define X_SAVE  &kp CMD(S)
 #define X_ALL   &kp CMD(A)
+
+/**
+ * Diacritics
+ */
+
+#ifdef LINUX
+  #define DEAD_ACUTE      RA(COMMA)
+  #define DEAD_GRAVE      RA(BSLH)
+  #define DEAD_CIRCUMFLEX PLUS
+  #define DEAD_DIAERESIS  RA(GT)
+  #define DEAD_CEDILLA    RA(COLON)
+#endif
+
+#define C_EACU &kp LBRC  // é
+#define C_AGRV &kp SQT   // à
+#define C_EGRV &kp LBKT  // è
+#define C_IGRV &kp EQUAL // ì
+#define C_OGRV &kp SEMI  // ò
+#define C_UGRV &kp BSLH  // ù
+#define C_CCDL &kp COLON // ç
+
+#include "dead_keys.h"
 
 /**
  * Arsenik Symbols:
@@ -103,73 +106,6 @@
 /**
  * Non-ASCII Symbols
  */
-
-// French and Italian chars
-#define C_EACU &kp LBRC  // é
-#define C_AGRV &kp SQT   // à
-#define C_EGRV &kp LBKT  // è
-#define C_IGRV &kp EQUAL // ì
-#define C_OGRV &kp SEMI  // ò
-#define C_UGRV &kp BSLH  // ù
-#define C_CCDL &kp COLON // ç
-
-// uppercase accented chars
-#ifdef LINUX
-  #define SC_CCDL &digraph RA(COLON) LS(C) // Ç
-  #define SC_EACU &digraph RA(COMMA) LS(E) // É
-  #define SC_AGRV &digraph RA(BSLH)  LS(A) // À
-  #define SC_EGRV &digraph RA(BSLH)  LS(E) // È
-  #define SC_IGRV &digraph RA(BSLH)  LS(I) // Ì
-  #define SC_OGRV &digraph RA(BSLH)  LS(O) // Ò
-  #define SC_UGRV &digraph RA(BSLH)  LS(U) // Ù
-#elifdef ENABLE_CP1252_ALT_CODES
-  #define SC_CCDL CP1252_UPPERCASE_C_CEDILLA
-  #define SC_EACU CP1252_UPPERCASE_E_ACUTE
-  #define SC_AGRV CP1252_UPPERCASE_A_GRAVE
-  #define SC_EGRV CP1252_UPPERCASE_E_GRAVE
-  #define SC_IGRV CP1252_UPPERCASE_I_GRAVE
-  #define SC_OGRV CP1252_UPPERCASE_O_GRAVE
-  #define SC_UGRV CP1252_UPPERCASE_U_GRAVE
-#else
-  #define SC_CCDL &digraph LS(C)
-  // No accented uppercase chars on Windows,
-  // but appending a quote mark is considered ok (!)
-  #define SC_EACU &digraph LS(E) MINUS // E'
-  #define SC_AGRV &digraph LS(A) MINUS // A'
-  #define SC_EGRV &digraph LS(E) MINUS // E'
-  #define SC_IGRV &digraph LS(I) MINUS // I'
-  #define SC_OGRV &digraph LS(O) MINUS // O'
-  #define SC_UGRV &digraph LS(U) MINUS // U'
-#endif
-
-// diaeresis
-#ifdef LINUX
-  #define  C_ADIA &digraph RA(GT)    A
-  #define SC_ADIA &digraph RA(GT) LS(A)
-  #define  C_EDIA &digraph RA(GT)    E
-  #define SC_EDIA &digraph RA(GT) LS(E)
-  #define  C_IDIA &digraph RA(GT)    I
-  #define SC_IDIA &digraph RA(GT) LS(I)
-  #define  C_ODIA &digraph RA(GT)    O
-  #define SC_ODIA &digraph RA(GT) LS(O)
-  #define  C_UDIA &digraph RA(GT)    U
-  #define SC_UDIA &digraph RA(GT) LS(U)
-  #define  C_YDIA &digraph RA(GT)    Y
-  #define SC_YDIA &digraph RA(GT) LS(Y)
-#else // unsupported
-  #define  C_ADIA &kp    A
-  #define SC_ADIA &kp LS(A)
-  #define  C_EDIA &kp    E
-  #define SC_EDIA &kp LS(E)
-  #define  C_IDIA &kp    I
-  #define SC_IDIA &kp LS(I)
-  #define  C_ODIA &kp    O
-  #define SC_ODIA &kp LS(O)
-  #define  C_UDIA &kp    U
-  #define SC_UDIA &kp LS(U)
-  #define  C_YDIA &kp    Y
-  #define SC_YDIA &kp LS(Y)
-#endif
 
 // other French and German chars
 #ifdef ENABLE_CP1252_ALT_CODES

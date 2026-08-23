@@ -6,31 +6,6 @@
 #endif
 
 /**
- * Dead Keys
- */
-
-#define DK_ACU &kp SQT  // acute
-#define DK_GRV &kp LBKT // grave
-#define DK_CIR &kp LBRC // circumflex
-#define DK_DIA &kp DQT  // diaeresis
-
-#define DEAD_ACUTE      &digraph SQT
-#define DEAD_GRAVE      &digraph LBKT
-#define DEAD_CIRCUMFLEX &digraph LBRC
-#define DEAD_DIAERESIS  &digraph DQT
-
-// tilde
-#ifdef LINUX
-  #define DEAD_TILDE &digraph RA(SEMI)
-  #define DK_TLD     &kp      RA(SEMI)
-  #define S_TILDE    &kp      RA(N4)
-#else
-  #define DEAD_TILDE &digraph RA(N4)
-  #define DK_TLD     &kp      RA(N4)
-  #define S_TILDE    DEAD_TILDE SPACE
-#endif
-
-/**
  * Action Combos
  */
 
@@ -45,6 +20,30 @@
 #define X_ALL   &kp CMD(A)
 
 /**
+ * Diacritics
+ */
+
+#define DEAD_ACUTE      SQT
+#define DEAD_GRAVE      LBKT
+#define DEAD_CIRCUMFLEX LBRC
+#define DEAD_DIAERESIS  DQT
+
+#ifdef LINUX
+  #define DEAD_TILDE RA(SEMI)
+  #define S_TILDE    &kp RA(N4)
+#else
+  #define DEAD_TILDE RA(N4)
+  #define S_TILDE    &digraph DEAD_TILDE SPACE
+#endif
+
+#define  C_NTLD &kp SEMI  // ñ
+#define SC_NTLD &kp COLON // Ñ
+#define  C_CCDL &kp BSLH  // ç
+#define SC_CCDL &kp PIPE  // Ç
+
+#include "dead_keys.h"
+
+/**
  * Arsenik Symbols:
  *   ^<>$% @&*'`
  *   {()}= \+-/"
@@ -52,7 +51,7 @@
  */
 
 // first row
-#define S_CARET DEAD_CIRCUMFLEX SPACE
+#define S_CARET DI_CIR SPACE
 #define S_LT    &kp NUBS
 #define S_GT    &kp PIPE2
 #define S_DLLR  &kp LS(N4)
@@ -61,7 +60,7 @@
 #define S_AMPS  &kp LS(N6)
 #define S_STAR  &kp RBRC
 #define S_SQT   &kp MINUS
-#define S_GRAVE DEAD_GRAVE SPACE
+#define S_GRAVE DI_GRV SPACE
 
 // second row
 #define S_LBRC  &kp RA(SQT)
@@ -96,17 +95,6 @@
  * Non-ASCII Symbols
  */
 
-// tilde, cedilla
-#define  C_ATLD DEAD_TILDE    A  // ã
-#define SC_ATLD DEAD_TILDE LS(A) // Ã
-#define  C_OTLD DEAD_TILDE    O  // õ
-#define SC_OTLD DEAD_TILDE LS(O) // Õ
-#define  C_NTLD &kp SEMI         // ñ
-#define SC_NTLD &kp COLON        // Ñ
-#define  C_CCDL &kp BSLH         // ç
-#define SC_CCDL &kp PIPE         // Ç
-
-// Other symbols
 #ifdef ENABLE_CP1252_ALT_CODES
   #define C_LGQT  CP1252_LEFT_GUILLEMET  // «
   #define C_RGQT  CP1252_RIGHT_GUILLEMET // »
@@ -122,6 +110,7 @@
   #define C_DEG   &none
   #define C_SILC  &none
 #endif
+
 #ifdef ENABLE_CP1252_ALT_CODES
   #define C_POUND CP1252_POUND   // £
 #elifdef LINUX
