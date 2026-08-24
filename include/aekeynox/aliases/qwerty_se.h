@@ -29,6 +29,8 @@
 #define DEAD_CIRCUMFLEX RBRC
 #define DEAD_TILDE      RA(RBKT)
 
+#define  C_ARNG &kp LBKT  // å
+#define SC_ARNG &kp LBRC  // Å
 #define  C_ADIA &kp SQT   // ä
 #define SC_ADIA &kp DQT   // Ä
 #define  C_ODIA &kp SEMI  // ö
@@ -83,6 +85,7 @@
 #define S_COMMA &kp COMMA
 #define S_DOT   &kp DOT
 #define S_MONEY &kp RA(E)
+
 /**
  * Non-ASCII Symbols
  */
@@ -109,8 +112,6 @@
   #define SC_ETH  &kp LS(D)
   #define  C_SZ   &digraph S S
 #endif
-#define  C_ARNG &kp LBKT  // å
-#define SC_ARNG &kp LBRC  // Å
 
 // Other symbols
 #ifdef ENABLE_CP1252_ALT_CODES
