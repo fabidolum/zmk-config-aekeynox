@@ -20,7 +20,7 @@
 // #define KB_LAYOUT_QWERTY_DK         // Denmark
 // #define KB_LAYOUT_QWERTY_EE         // Estonia
 // #define KB_LAYOUT_QWERTY_ES         // Spain
-// #define KB_LAYOUT_QWERTY_INTL       // US (International)
+#define KB_LAYOUT_QWERTY_INTL       // US (International)
 // #define KB_LAYOUT_QWERTY_IT         // Italy
 // #define KB_LAYOUT_QWERTY_LAFAYETTE  // France
 // #define KB_LAYOUT_QWERTY_LATAM      // Latin America
@@ -81,7 +81,7 @@
 // #define KB_EMULATION_COLEMAK          // host: QWERTY
 // #define KB_EMULATION_COLEMAK_DH       // host: QWERTY
 // #define KB_EMULATION_DVORAK           // host: QWERTY
-// #define KB_EMULATION_ERGOL            // host: QWERTY-intl or AZERTY
+#define KB_EMULATION_ERGOL            // host: QWERTY-intl or AZERTY
 // #define KB_EMULATION_QWERTY_LAFAYETTE // host: QWERTY-intl or AZERTY
 
 // [Experimental]
@@ -106,7 +106,7 @@
 
 // #define HT_NONE
 // #define HT_THUMB_TAPS
-// #define HT_HOME_ROW_MODS  // (default behavior)
+#define HT_HOME_ROW_MODS  // (default behavior)
 // #define HT_TWO_THUMB_KEYS
 
 // Timing is key! Keep the default value if unsure.
@@ -144,7 +144,7 @@
 //  + Escape under the left thumb (direct access)
 // Highly recommended for Vim users, obviously. :-)
 
-// #define VIM_NAVIGATION
+#define VIM_NAVIGATION
 
 // [Experimental]
 // Uncomment the following line to enable the Callum variant of the previous
